@@ -1,0 +1,25 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+#id_original {
+    margin: auto;
+}
+
+#photo_upload {
+    max-width:980px;
+    margin:auto;
+}
+
+.output-photo {
+    width:100%;
+}
+
+.archive {
+    width:33%;
+    padding-top:10px;
+    padding-bottom:10px;

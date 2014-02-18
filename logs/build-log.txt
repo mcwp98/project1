@@ -1,0 +1,47 @@
+********************
+    BUILD LOGS
+********************
+
+2/17/2014
+ - Starting on the build for my personal website.
+ - The first task is to start the project and create the image analyzer portion
+ - First create the virtual environment and install django via pip
+ -  django-admin.py startproject projectname
+ - navigate into the project folder and start a new app using startapp, otherwise same
+ - next, you must modify the settings.py folder to get your initial settings
+    - database automatically set to use sqlite3
+    - make sure to ass your new app
+    - add host, port, user, password for new database connection
+    - add a media root for imported files
+    - set static static url, stat root, staticfiles dirs
+    - add a template dir for base folder
+ - added a urls.py file to an app to modularize urls
+    - must add to main urls.py using this format: (r'articles/', include('article.urls')),
+    
+ - here i am adding the shopped component, plus a home page of pure links just to provide the layout of the framework?
+ - must create the models associated with the app in odels.py
+    - created an image model for the storage of image urls to be displayed
+    - these urls will ultimately be linked to static files uploaded by user
+    - the def __unicode__(self) setting will allow you to return self.title etc to print
+    - must create the home page.  edit the views.py with a base url pointer to home in view
+    - this will just have a list of links
+    - this view renders index.html which will display hello world, but also utilie templates
+    - added a templates folder to the base dir, plus static folder
+    - established img, js, css, uploaded folders inside the static folder
+    - added a base template to base folder
+    - added a home template as well in teh same base folder
+- template structure is now defined and working, and there are functioning links on the home page.  now to connect the css, cake but i gotta do it
+ - first, i will add the template for the shopped section
+ - hello world template added to the shopped section
+ - now  just add the link to the shopped hom to the bas template
+ - in order to deal with static files, must provide link to static folder
+    - django will copy this into a folder that will be linkable through the django url system
+    - serving static files need registration, but changing configuration later is easier
+    - make sure to {% load staticfiles %} to use the {% stat "..." %} tag to get static files
+    - run python manage.py collectstatic to register these files through django
+    - now we can service static css and js on the server
+    - next, we will work on creating a form to upload a picture
+ - now added the bootstrap template, create home cover page
+ - bootstrap cover template in place, now to add a template for shopped
+ - added it in, basic template with top bar navigation
+    

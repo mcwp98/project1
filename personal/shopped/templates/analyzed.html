@@ -1,0 +1,67 @@
+{% extends "shopped.html" %}
+{% load staticfiles %}
+
+{% block shopcontent %}
+
+      <div class="starter-template">
+        <h1>{{ photo.title }}</h1>
+        <p class="lead">View your image analysis below.</p>
+        <div class="row">
+            <div class="col-md-8">
+                <p><img class='output-photo' src='/static/assets/{{ photo.original }}' /></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Original Image</h2>
+                <p>This is your original image.  It always pays to carefully look at your image. Here are a few things to look for:</p>
+                <br><br>
+                <ul>
+                    <li><p>Faces - look for distortions around facial features, as these are generally easy to notice</p></li>
+                    <li><p>Edges - often times edges are distorted or blended poorly</p></li>
+                    <li><p>Lighting - look for differences in shadows and shading, as sometimes photoshopped images have lighting that conflicts with the environment.</p></li>
+                </ul>
+                <br><br>
+                <p>After you have taken stock of all the original image has to offer, move on to the error-level analysis(ELA) below.
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-8">
+                    <p><img class='output-photo' src='/static/assets/{{ photo.transELA }}' /></p>
+                </div>
+                <div class="col-md-4">
+                <h2>Error-Level Analysis</h2>
+                <br><br>
+                <p>Error level analysis of an image involves resaving an image at a known
+                    lesser quality rate (95%, in this case) and then calculating the difference
+                    between the original and resaved images.  Some things to look for:</p>
+                <ul>
+                    <li><p>Rainbowing - Drawing programs may introduce a rainbow effect on surfaces of a flat color.</p></li>
+                    <li><p>Highlighted distinctions - splices may introduce visible lines</p></li>
+                    <li><p>Differing error pattern - pieces of image from different sources will show different levels of degredation.</p></li>
+                    <li><p>Distorted error pattern - error pattern may show signs of smudging or stretching.</p></li>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-8">
+                    <p><img class='output-photo' src='/static/assets/{{ photo.saturated }}' /></p>
+                </div>
+                <div class="col-md-4">
+                <h2>Super-Saturation</h2>
+                <br><br><br>
+                <p>For this one, you are on your own.  I read somewhere that super-saturating a photo may be useful in distinguishing distortions and irregularities within a photo.  Honestly, I find the ELA easier to interpret.</p>
+                <br><br><br>
+                <p>As a later addition to this tool, I intend to introduce the ability to seperate red/gree/blue layers into 3 images, because I have also heard that this may help.  Who knows?</p>
+                </div>
+            </div>
+            <hr>
+            <!--<div class="row">
+                <div class="col-md-8">
+                    <p>Original Photo Date: {{ photo.dateTimeOriginal }}</p>
+                </div>
+            </div>
+            <a href="/shopped"><h1>Try another?</h1></a>-->
+
+      </div>
+      
+{% endblock %}
