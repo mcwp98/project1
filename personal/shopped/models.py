@@ -2,7 +2,7 @@ from django.db import models
 from time import time
 from PIL import Image, ImageChops, ImageEnhance
 from PIL.ExifTags import TAGS
-import sys, os.path, ExifTags
+import sys, os.path
 
 def get_upload_file_name(instance, filename):
     return "uploaded_files/%s_%s" % (str(time()).replace('.','_'), filename)
