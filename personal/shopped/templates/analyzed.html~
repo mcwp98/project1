@@ -55,13 +55,59 @@
                 </div>
             </div>
             <hr>
-            <!--<div class="row">
-                <div class="col-md-8">
-                    <p>Original Photo Date: {{ photo.dateTimeOriginal }}</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Image Meta data</h2>
+                    <br><br>
+                    <p> If you're lucky, you'll see plenty of image meta data to the left.</p>
+                    <p>This meta-data can tell you lots of things, including:</p>
+                    <br><br>
+                        <ul>
+                            <li>Where the image was taken</li>
+                            <li>What kind of camera was used</li>
+                            <li>What kind of image software was used</li>
+                            <li>When the image was taken and modified</li>
+                        </ul>
+                    <br><br>
+                    <p>The list is frankly long and a lot to take in, but there is some cool stuff in there.</p>
+                    <p>Check this link for more on meta-data: 
+                        <a href="http://en.wikipedia.org/wiki/Exchangeable_image_file_format">EXIF</a>
+                    </p>
+                    <p>Also, be aware that photo-sharing and social media sites often strip meta data from images</p>
+                </div>
+                <div class="col-md-8" style="height:500px;overflow:auto;background-color: rgb(252, 248, 242);border:3px solid rgb(240, 173, 78);">
+                    <table class="table" >
+                        <tr style="border-top:none;">
+                            <th style="color: rgb(240, 173, 78);text-align:center;">Key</th>
+                            <th style="color: rgb(240, 173, 78);text-align:center;">Value</th>
+                        </tr>
+                        {% for meta in metas %}
+                        <tr>
+                            <td>{{meta.key}}</td>
+                            <td> {{meta.value}}</td>
+                        </tr>
+                    {% endfor %}
+                    </table>   
                 </div>
             </div>
-            <a href="/shopped"><h1>Try another?</h1></a>-->
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    {% if last %}
+                        <a href="/shopped/analyzed/{{ last }}">Last</a>
+                    {% endif %}
+                </div>
+                <div class="col-md-4">
+                    <a href="/shopped"><h1>Try another?</h1></a>
+                </div>
+                <div class="col-md-4">
+                    {% if next %}
+                        <a href="/shopped/analyzed/{{ next }}">Next</a>
+                    {% endif %}
+                </div>
+            </div>
 
+            
       </div>
       
 {% endblock %}

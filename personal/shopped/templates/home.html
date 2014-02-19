@@ -6,6 +6,7 @@
       <div class="starter-template">
         <h1>Is it photoshopped?</h1>
         <p class="lead">Use this tool to help you determine if a JPEG image has been photoshopped.</p>
+        <hr>
         <form id="photo_upload" action='/shopped/' method='post' enctype='multipart/form-data'>{% csrf_token %}
             <fieldset>
                 <legend>Upload a File to Analyze!</legend>
@@ -20,17 +21,14 @@
             </fieldset>
         </form>
         <hr>
-        <h2>Previous analyses</h2>
-        <hr>
+        <h2>User Submitted Images</h2>
 
-        <div class="panel panel-default">
-             <div class="panel-body">
-            {% for photo in photos %}
+        <div class="row">
+        {% for photo in photos %}
         
-                <a href='/shopped/analyzed/{{ photo.id }}'><img class="img-thumbnail archive" src='/static/assets/{{ photo.original }}' /></a>
+            <a href='/shopped/analyzed/{{ photo.id }}'><img class="img-thumbnail archive" src='/static/assets/{{ photo.original }}' /></a>
             
-            {% endfor %}
-            </div>
+        {% endfor %}
         </div>
       </div>
       

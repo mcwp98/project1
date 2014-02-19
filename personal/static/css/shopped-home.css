@@ -11,8 +11,11 @@ body {
 }
 
 #photo_upload {
-    max-width:980px;
     margin:auto;
+}
+
+#photo_upload > fieldset > legend {
+    border:none;
 }
 
 .output-photo {

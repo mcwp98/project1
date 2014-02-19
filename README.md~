@@ -1,2 +1,13 @@
-personal
+Project 1
 ========
+
+THis project is an app providing a couple tools to hopefully assist in determining if a JPEG photo is photoshopped.  It will perform an error-level analysis on the image, supersaturate it, and attempt to gather meta data.  It will then store those results in the database.
+
+The home page is a placeholder for future work.
+
+Usage:
+=======
+
+To use this app, from the homepage ('/'), click on the sopped link in the top right corner or navigate directly to ('/shopped').  
+
+Here you can select previously analyzed pictures to view the results, or upload one of your own.  Make sure that it is a JPEG picture.  Click analyze, and you will be redirected to ('/shopped/analyzed/id'), where id is the id number of the picture to be displayed.  From here you can view the results.  At the bottom of the page is a link to try again, as well as last/next links for navigating straight to another entry.

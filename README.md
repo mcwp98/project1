@@ -1,9 +1,15 @@
 Project 1
 ========
 
-In order to use this site, please navigate to the app portion I am turning in.
-On the top right corner of the home page, click shopped.
-Use the form to upload a JPEG ONLY and give it a title.
-You will be automatically redirected to a page displaying the original and two transformations.
-Press shopped at the top or try again to go back to the shopped app home page.
-Click on a previous analysis under /shopped to see previous analyses.
+THis project is an app providing a couple tools to hopefully assist in determining if a JPEG photo is photoshopped.  It will perform an error-level analysis on the image, supersaturate it, and attempt to gather meta data.  It will then store those results in the database.
+
+The home page is a placeholder for future work.
+
+Usage:
+=======
+
+To use this app, from the homepage ('/'), click on the sopped link in the top right corner or navigate directly to ('/shopped').  
+
+Here you can select previously analyzed pictures to view the results, or upload one of your own.  Make sure that it is a JPEG picture.  Click analyze, and you will be redirected to ('/shopped/analyzed/id'), where id is the id number of the picture to be displayed.  From here you can view the results.  At the bottom of the page is a link to try again, as well as last/next links for navigating straight to another entry.
+
+TIP: if your image is large, right clicking and viewing the ELA in a new window may make it easier to see.

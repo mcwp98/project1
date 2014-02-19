@@ -5,7 +5,7 @@ from forms import PhotoUpload
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 # Create your views here.
-from models import Photo
+from models import Photo, Meta
 
 
     
@@ -16,6 +16,7 @@ def create(request):
             photo = form.save()
             photo.ela()
             photo.saturate()
+            photo.exif()
             return HttpResponseRedirect('/shopped/analyzed/%d' % photo.id)
             
     else:
@@ -30,7 +31,27 @@ def create(request):
     return render_to_response('home.html', args)
     
 def analyzed(request, photo_id=1):
-
-    return render_to_response('analyzed.html', {'photo': Photo.objects.get(id=photo_id)})
+    photo = Photo.objects.get(id=photo_id)
+    photo.meta_set.select_related()
+    
+    args = {}
+    args['photo'] = photo
+    args['metas'] = photo.meta_set.select_related()
+    
+    temp_id = int(photo_id)
+    
+    try:
+        last = Photo.objects.get(id=(temp_id-1)).id
+    except Photo.DoesNotExist:
+        last = None
+    args['last'] = last
+    
+    try:
+        next = Photo.objects.get(id=(temp_id+1)).id
+    except Photo.DoesNotExist:
+        next = None
+    args['next'] = next
+        
+    return render_to_response('analyzed.html', args)
     
 

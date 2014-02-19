@@ -16,13 +16,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Is it shopped?</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/shopped">Shopped</a></li>
+            <li><a href="/shopped">Shopped</a></li>
             <li><a href="/">Home</a></li>
-            <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -31,11 +30,6 @@
     <div class="container">
       {% block shopcontent %}
       
-      <div class="starter-template">
-        <h1>{{ photo.title }}</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        <p><img src='/static/assets/uploaded/ {{ photo.original }}' width="200"/></p>
-      </div>
       {% endblock %}
     </div><!-- /.container -->
 {% endblock %}

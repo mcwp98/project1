@@ -11,8 +11,11 @@ body {
 }
 
 #photo_upload {
-    max-width:980px;
     margin:auto;
+}
+
+#photo_upload > legend {
+    border:none;
 }
 
 .output-photo {
@@ -23,3 +26,4 @@ body {
     width:33%;
     padding-top:10px;
     padding-bottom:10px;
+}
